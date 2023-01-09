@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.container{
+   padding: 2rem;
+   font-family: 'Poppins', sans-serif;
+   display: flex;
+   justify-content: center;
+}
+
+.form{
+   width: 50vw;
+   border-radius: 10px;
+   background: linear-gradient(purple,rgb(127, 44, 127));
+   padding:1rem 1.5rem;
+}
+
+.form input{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0.2rem 0.5rem;
+    border-bottom: 3px solid yellow;
+    font-size: 1rem;
+    color: white;
+    font-weight: 700;
+    transition: border 0.5s;
+    text-transform: capitalize;
+}
+
+
+.form input::placeholder{
+   color: white;
+   opacity: 0.8;
+}
+.textarea{
+   width: 100%;
+   background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0rem 0.5rem;
+    border-bottom: 3px solid yellow;
+    font-size: 1rem;
+    color: white;
+    font-weight: 700;
+    transition: border 0.5s;
+    text-transform: capitalize;
+}
+.textarea::placeholder{
+   color: white;
+   opacity: 0.8;
+}
+.form_control{
+   display: flex;
+   justify-content: space-between;
+   margin: 2rem 0;
+}
+
+.slider{
+   display: flex;
+   flex-direction: column;
+}
+
+.buble{
+  color: white;
+  text-align: center;
+}
+.label{
+ color: white;
+ text-align: center;
+}
+
+.btn{
+   border: none !important;
+   background-color: rgb(7, 255, 164) !important;
+   border-radius: 10px;
+   cursor: pointer;
+   width: 50%;
+   height: 40px;
+
+}
+.btn:hover{
+   color: rgb(255, 2, 2);
+}
+
+.alert{
+   text-align: center;
+   font-size: 1.2rem;
+   color: rgb(132, 255, 181);
+}
+
+.jc{
+   justify-content: center;
+}
+
+.form input[type="range"]{
+   filter: hue-rotate(180deg);
+}

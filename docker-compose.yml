@@ -1,0 +1,42 @@
+services:
+  client:
+    container_name: client
+    build:
+      context: ./client
+      dockerfile: Dockerfile.dev
+
+    volumes:
+      - /app/node_modules
+      - ./client:/app
+      - /app/.next
+    ports:
+      - '3000:3000'
+  api:
+    container_name: api
+    build:
+      context: ./server
+      dockerfile: Dockerfile.dev
+
+    volumes:
+      - /app/node_modules
+      - ./server:/app
+    environment:
+      - MONGO_URI=mongodb+srv://ayush:mzjoY7w892srLPLH@cluster0.qqptvud.mongodb.net/clients
+      - JWT_SECRET=secret
+      - CLIENT_ID=327160530561-5mv264ncn0i9t7h6a4iult08po9p0cc2.apps.googleusercontent.com
+      - CLIENT_SECRET=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
+      - CALLBACK_URL=/api/auth/google/callback
+    ports:
+      - '5000:5000'
+  nginx:
+    container_name: nginx
+    depends_on:
+      - api
+      - client
+    restart: always
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile.dev
+
+    ports:
+      - '8080:80'
